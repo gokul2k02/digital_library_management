@@ -1,0 +1,36 @@
+#table1{
+width:500px;
+height: 200px;
+}
+
+body{
+background-image: url('{% static "images/background.jpg" %}');
+background-repeat: no-repeat;
+background-size:100%;
+color:aliceblue;
+font-size:30px;
+}
+
+a{
+color:cornsilk;
+}
+
+#div3{
+border: 3px solid white;
+width:50%;
+margin-left: 25%;
+float:center;
+}
+
+input{
+width:70%;
+height: 70%;
+font-size:20px;
+}
+
+input[type=submit]{
+color:White;
+background-color: #393E46;
+width:30%;
+height: 100%;
+}

@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+input
+{
+
+background:white;
+
+margin-bottom:20px;
+
+border-style:ridge;
+
+border-bottom:1px solid #999
+width:70%;
+height:70%;
+float:center;
+}
+
+input1{
+background:transparent;
+
+margin-bottom:20px;
+
+border:none;
+
+border-bottom:1px solid #999
+}
+
+body
+{
+
+color:black;
+font-size:30px;
+}
+</style>
+<body style="background-image: url('{% static "images/image1.jfif"%}');">
+<form action="adminread" method="post">
+    {% csrf_token %}
+    <h2 align="center">{{ data }}</h2>
+    <table align="center">
+        <tr>
+            <td>username:</td>
+            <td><input type="text" name="adname"></td>
+        </tr>
+        <tr>
+            <td>email:</td>
+            <td><input type="email" name="ademail"></td>
+        </tr>
+        <tr>
+            <td>password:</td>
+            <td><input type="password" name="adpas"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Register"></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

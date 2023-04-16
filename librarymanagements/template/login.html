@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel='stylesheet' href="{% static 'css/login.css' %}">
+</head>
+<style>
+input
+{
+
+background:white;
+
+margin-bottom:20px;
+
+border-style:ridge;
+
+border-bottom:1px solid #999
+width:70%;
+height:70%;
+float:center;
+}
+
+input1{
+background:transparent;
+
+margin-bottom:20px;
+
+border:none;
+
+border-bottom:1px solid #999
+}
+#table1
+{
+width:500px;
+height:200px;
+
+}
+#div3
+{
+border-style:dashed;
+height:280px;
+width:50%;
+margin-left:25%;
+float:center;
+}
+body
+{
+background-size:cover;
+color:black;
+font-size:30px;
+}
+</style>
+
+<body style="background-image: url('{% static "images/background.jpg"%}');">
+
+<h2 align="center">LOGIN PAGE</h2>
+<h3 style="color:white;" align="center"><u>{{ data }}</u></h3>
+<div id="div3">
+<table align="center" id="table1">
+     <form action="log" method="post">
+         {% csrf_token %}
+         <tr>
+             <td><b>Username:</b></td>
+             <td><input type="text" name="tbname" placeholder="Enter Username"></td>
+         </tr>
+         <tr>
+             <td><b>Password:<b/></td>
+             <td><input type="password" name="tbpwd" placeholder="Enter Password"></td>
+         </tr>
+         <tr>
+             <td><input type="submit" value="Login"></b></td>
+         <tr>
+             <td><b><a href="adminreg">ADMIN REG</b></a></td>
+         </tr>
+         <tr>
+             <td><b><a href="studentregone">STUDENT REG</b></a></td>
+         </tr>
+     </form>
+</table>
+</div>
+</body>
+</html>

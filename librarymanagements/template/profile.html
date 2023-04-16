@@ -1,0 +1,30 @@
+{% extends 'navbar2.html' %}
+{% block content %}
+<form action="pro" method="post">
+  {% csrf_token %}
+  <center>Student profile</center>
+  <br>
+<table align="center">
+  <tr>
+    <td>Name:</td>
+    <td>{{ data.s_name }}</td>
+  </tr>
+  <tr>
+    <td>Phno:</td>
+    <td>{{ data.s_phone }}</td>
+  </tr>
+  <tr>
+    <td>Course:</td>
+    <td>{{ data.s_course_id }}</td>
+  </tr>
+  <tr>
+    <td>Sem:</td>
+    <td>{{ data.s_semester }}</td>
+  </tr>
+  <tr>
+    <a href="{% url 'prof' %}"></a>
+    <td><input type="submit" name="btnsubmit" value="Edit Profile"></a></td>
+  </tr>
+</table>
+</form>
+{% endblock %}

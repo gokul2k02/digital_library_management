@@ -1,0 +1,65 @@
+{% extends 'navbar.html' %}
+{% block content %}
+<body>
+<div>
+   <table align="center" border="2">
+<form action="sc" method="post">
+    {% csrf_token %}
+
+        <tr>
+            <td>student semester:</td>
+            <td><input type="number" name="stsem"></td>
+        </tr>
+      <tr>
+        <td>student course:</td>
+        <td><select name="crs">
+          {% for i in data %}
+          <option>{{ i.course_name }}</option>
+          {% endfor %}
+        </select></td>
+      </tr>
+        <tr>
+            <td><input type="submit" value="Register"></td>
+        </tr>
+
+</form>
+
+ </div>
+<div>
+  <form action="assignread" method="post">
+    {% csrf_token %}
+
+    <tr>
+      <td>student name:</td>
+      <td><select name="stname">
+        {% for i in data2 %}
+        <option>{{ i.s_name }}</option>
+        {% endfor %}
+      </select></td>
+    </tr>
+    <tr>
+      <td>book name</td>
+      <td><select name="bkname">
+        {% for i in data1 %}
+        <option>{{ i.b_name }}</option>
+        {% endfor %}
+      </select></td>
+    </tr>
+    <tr>
+      <td>start date:</td>
+      <td><input type="date" name="st_date"></td>
+    </tr>
+    <tr>
+      <td>end date:</td>
+      <td><input type="date" name="end_date"></td>
+    </tr>
+    <tr>
+      <td><input type="submit" value="assign book"></td>
+    </tr>
+
+  </form>
+   </table>
+</div>
+
+</body>
+{% endblock %}

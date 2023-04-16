@@ -1,0 +1,29 @@
+{% extends 'navbar.html' %}
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  <h2 align="center"><u>update book & details</u></h2>
+  <table align="center">
+    <tr>
+      <td>bookname:</td>
+      <td><input type="text" name="bkname" value="{{ data.b_name }}"></td>
+    </tr>
+    <tr>
+      <td>author name:</td>
+      <td><input type="text" name="atname" value="{{ data.a_name }}"></td>
+    </tr>
+    <tr>
+      <td>course:</td>
+      <td><select name="ddlcourse">
+        <option selected>{{ data.course_id }}</option>
+        {% for i in datac %}
+        <option>{{ i.course_name }}</option>
+        {% endfor %}
+      </select></td>
+    </tr>
+    <tr>
+      <td><input type="submit" value="update"></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

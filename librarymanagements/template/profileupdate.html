@@ -1,0 +1,33 @@
+{% extends 'navbar2.html' %}
+{% block content %}
+<form action="prof" method="post">
+  {% csrf_token %}
+  <center>Update Student Details</center>
+  <br>
+<table align="center">
+  <tr>
+    <td>Name:</td>
+    <td><input type="text" name="name" value="{{ data.s_name }}"></td>
+  </tr>
+  <tr>
+    <td>Phno:</td>
+    <td><input type="number" name="phone" value="{{ data.s_phone }}"></td>
+  </tr>
+  <tr>
+    <td>Course:</td>
+    <td><input type="text" name="course" value="{{ data.s_course }}" disabled></td>
+  </tr>
+  <tr>
+    <td>Sem:</td>
+    <td><input type="number" name="sem" value="{{ data.s_semester }}"></td>
+  </tr>
+  <tr>
+    <td>Password:</td>
+    <td><input type="password" name="pass" value="{{ data.s_password }}"></td>
+  </tr>
+  <tr>
+    <td><input type="submit" name="btnsubmit" value="Submit"></td>
+  </tr>
+</table>
+</form>
+{% endblock %}
